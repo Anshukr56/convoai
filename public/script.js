@@ -1,4 +1,4 @@
-const baseURL = "https://convoai-9rgf.onrender.com/";
+const baseURL = "";
 const currentPage = window.location.pathname;
 if (
   !localStorage.getItem("token") &&
