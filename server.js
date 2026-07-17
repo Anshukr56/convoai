@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // MongoDB Connect
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB Connected ✅"))
+  .then(() => console.log("MongoDB Connected "))
   .catch((err) => console.log(err));
 
 // =======================
@@ -51,9 +51,7 @@ app.post("/signup", async (req, res) => {
   }
 });
 
-// =======================
 // Login API
-// =======================
 app.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -83,14 +81,12 @@ app.post("/login", async (req, res) => {
   }
 });
 
-// =======================
 // Gemini Chat API (Direct REST API)
-// =======================
 app.post("/chat", async (req, res) => {
   try {
     const { message } = req.body;
     const apiKey = process.env.GEMINI_API_KEY;
-    console.log("👉 My API Key is: ->" + apiKey + "<-");
+    console.log(" My API Key is: ->" + apiKey + "<-");
 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
