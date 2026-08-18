@@ -137,7 +137,7 @@ async function sendMessage() {
     const typingBox = document.getElementById(typingId);
 
     if (typingBox) {
-      typingBox.innerText = "Server Error ⚠️";
+      typingBox.innerText = "Server Error ";
     }
   }
 
